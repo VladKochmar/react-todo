@@ -29,6 +29,7 @@ const TaskEditForm: FC<TaskEditFormProps> = ({ task, onEdit }) => {
         <input
           type="text"
           value={title}
+          data-testid="task-name-input"
           onChange={e => setTitle(e.target.value)}
           placeholder="Enter the task name"
           className="w-full rounded-[8px] outline-0 border-2 border-gray-200 dark:dark:border-gray-700 focus:border-gray-400 transition-colors duration-300 px-2 py-1"
@@ -49,6 +50,7 @@ const TaskEditForm: FC<TaskEditFormProps> = ({ task, onEdit }) => {
         <span className="text-muted text-sm font-medium">Task description</span>
         <textarea
           value={description}
+          data-testid="description-input"
           onChange={e => setDescription(e.target.value)}
           placeholder="Enter the task description"
           className="w-full rounded-[8px] outline-0 border-2 border-gray-200 dark:dark:border-gray-700 focus:border-gray-400 transition-colors duration-300 px-2 py-1"></textarea>

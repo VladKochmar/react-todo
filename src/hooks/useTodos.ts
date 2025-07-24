@@ -24,7 +24,7 @@ export const useTodos = () => {
   return { tasks, add, edit, toggleDone, remove };
 };
 
-const tasksReducer = (tasks: Task[], action: TaskAction): Task[] => {
+export const tasksReducer = (tasks: Task[], action: TaskAction): Task[] => {
   switch (action.type) {
     case 'ADD': {
       return [{ id: Date.now(), title: action.name, done: false, deadline: '', description: '' }, ...tasks];

@@ -38,7 +38,11 @@ const Modal: FC<ModalProps> = ({ open, title, onClose, children }) => {
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
       onClick={onClose}
+      data-testid="modal-overlay"
       className={`fixed inset-0 flex justify-center items-center transition-colors ${show ? 'visible bg-black/20' : 'invisible'}`}
       onTransitionEnd={handleTransitionEnd}>
       <div
@@ -49,7 +53,7 @@ const Modal: FC<ModalProps> = ({ open, title, onClose, children }) => {
         <header className="flex gap-x-4 justify-center items-center not-last:mb-4">
           <div className="w-6 h-6"></div>
           {title && <h2 className="text-xl/loose font-bold text-center flex-1">{title}</h2>}
-          <button onClick={onClose} className="cursor-pointer text-muted w-6 h-6">
+          <button aria-label="Close modal" onClick={onClose} className="cursor-pointer text-muted w-6 h-6">
             <X />
           </button>
         </header>

@@ -11,7 +11,10 @@ const ProgressBar: FC<ProgressBarProps> = ({ total, completed }) => {
   return (
     <>
       <div className="relative w-full h-1.5 bg-gray-200 dark:bg-gray-700 transition-colors duration-300 rounded mb-1">
-        <div className="absolute h-1.5 rounded bg-primary transition-all duration-300" style={{ width: `${percent}%` }}></div>
+        <div
+          data-testid="progress-bar"
+          className="absolute h-1.5 rounded bg-primary transition-all duration-300"
+          style={{ width: `${percent}%` }}></div>
       </div>
       <div className="flex justify-between text-muted dark:text-gray-400 text-sm mb-3">
         <span>{percent}% complete</span>

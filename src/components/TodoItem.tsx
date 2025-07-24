@@ -17,11 +17,13 @@ const TodoItem: FC<TodoItemProps> = ({ task, onEdit, onToggleDone, onRemove }) =
       <CheckboxButton checked={task.done} onCheck={() => onToggleDone(task.id)} />
       <span className="flex-auto">{task.title}</span>
       <button
+        aria-label="Open edit task modal window"
         onClick={() => onEdit(task.id)}
         className="cursor-pointer outline-0 text-muted dark:text-gray-400 transition-colors duration-300 hover:text-primary focus:text-primary">
         <Pencil className="w-5 h-5" />
       </button>
       <button
+        aria-label="Remove task"
         onClick={() => onRemove(task.id)}
         className="cursor-pointer outline-0 text-muted dark:text-gray-400 transition-colors duration-300 hover:text-red-500 focus:text-red-500">
         <Trash2 className="w-5 h-5" />

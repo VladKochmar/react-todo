@@ -28,15 +28,14 @@ const AddEditor: FC<AddEditorProps> = ({ onAdd, inputRef }) => {
         }`}>
         <input
           ref={inputRef}
-          value={text}
-          onChange={e => setText(e.target.value)}
           type="text"
+          value={text}
+          data-testid="task-title-input"
+          onChange={e => setText(e.target.value)}
           placeholder="Add a new task..."
           className="w-full outline-0 placeholder:text-muted dark:placeholder:text-gray-400 px-3"
         />
-        <Button onClick={handleClick} className="">
-          Add
-        </Button>
+        <Button onClick={handleClick}>Add</Button>
       </div>
       {isError && <span className="text-red-500 text-sm">Please enter a task title</span>}
     </div>
