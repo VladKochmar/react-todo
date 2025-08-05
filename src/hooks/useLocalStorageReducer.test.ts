@@ -2,7 +2,7 @@ import { renderHook, act } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { useLocalStorageReducer } from './useLocalStorageReducer';
 import * as storege from '../utils/localStorage';
-import { TaskAction } from '../types/TaskAction';
+import type { TaskAction } from '../types/TaskAction';
 
 type Task = { id: number; title: string };
 type State = Task[];

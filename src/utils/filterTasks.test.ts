@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { filterTasks } from './filterTasks';
-import Task from '../types/Task';
+import type Task from '../types/Task';
 
 const mockTasks: Task[] = [
   { id: 1, title: 'Task 1', done: false },

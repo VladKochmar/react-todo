@@ -20,7 +20,7 @@ describe('useTheme', () => {
 
   it('uses system preference if no theme in localStorage', () => {
     vi.spyOn(storage, 'getItem').mockReturnValue(null);
-    vi.stubGlobal('matchMedia', query => ({
+    vi.stubGlobal('matchMedia', (query: string) => ({
       matches: query === '(prefers-color-scheme: dark)',
       media: query,
       onchange: null,
