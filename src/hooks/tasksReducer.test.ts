@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { tasksReducer } from './useTodos';
-import { TaskAction } from '../types/TaskAction';
+import type { TaskAction } from '../types/TaskAction';
+import type Task from '@/types/Task';
 
 describe('tasksReducer', () => {
   it('adds a new task', () => {
-    const state = [];
+    const state: Task[] = [];
     const action: TaskAction = { type: 'ADD', name: 'Test task' as const };
 
     const newState = tasksReducer(state, action);
